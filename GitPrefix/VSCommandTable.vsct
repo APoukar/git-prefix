@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<Extern href="stdidcmd.h"/>
+	<Extern href="vsshlids.h"/>
+	<Include href="KnownImageIds.vsct"/>
+	<Include href="VSGlobals.vsct"/>
+
+	<Commands package="GitPrefix">
+		<Groups>
+			<Group guid="GitPrefix" id="GitPrefixGroup" priority="0x0600">
+				<Parent guid="GitMenu" id="menuidGitTopLevelMenu"/>
+			</Group>
+		</Groups>
+
+		<!--This section defines the elements the user can interact with, like a menu command or a button
+        or combo box in a toolbar. -->
+		<Buttons>
+			<Button guid="GitPrefix" id="AppendGitPrefix" priority="0x0100" type="Button">
+				<Parent guid="GitPrefix" id="GitPrefixGroup" />
+				<Icon guid="ImageCatalogGuid" id="StatusInformation" />
+				<CommandFlag>IconIsMoniker</CommandFlag>
+				<Strings>
+					<ButtonText>Append Git Prefix</ButtonText>
+					<LocCanonicalName>Team.Git.AppendGitPrefix</LocCanonicalName>
+				</Strings>
+			</Button>
+		</Buttons>
+	</Commands>
+
+	<Symbols>
+		<GuidSymbol name="GitPrefix" value="{bb70f522-d446-42f9-8466-7d13d0793095}">
+			<IDSymbol name="GitPrefixGroup" value="0x0001" />
+			<IDSymbol name="AppendGitPrefix" value="0x0100" />
+		</GuidSymbol>
+		<GuidSymbol name="GitMenu" value="{57735D06-C920-4415-A2E0-7D6E6FBDFA99}">
+			<IDSymbol name="menuidGitTopLevelMenu" value="0xF000"/>
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
